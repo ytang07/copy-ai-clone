@@ -1,0 +1,36 @@
+{
+	"type": "package",
+	"handle": "copy-ai-clone",
+	"version": "0.0.4",
+	"description": null,
+	"author": "Yujian Tang",
+	"entrypoint": "Unused",
+	"public": true,
+	"build_config": {
+		"ignore": [
+			"tests",
+			"examples"
+		]
+	},
+	"configTemplate": {},
+	"steamshipRegistry": {
+		"tagline": "generate an article with GPT-3",
+		"tagline2": null,
+		"usefulFor": null,
+		"videoURL": null,
+		"githubURL": null,
+		"demoURL": null,
+		"jupyterURL": null,
+		"authorGithub": "ytang07",
+		"authorName": "Yujian Tang",
+		"authorEmail": null,
+		"authorTwitter": null,
+		"authorURL": null,
+		"tags": [
+			"GPT-3",
+			"Generative AI",
+			"Copywriting",
+			"Prompt API"
+		]
+	}
+}
