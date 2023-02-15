@@ -1,6 +1,6 @@
 from steamship import Steamship
 from steamship.invocable import post, PackageService
-import string, typing
+import typing
 
 class PromptPackage(PackageService):
   POINTS_LLM_CONFIG = {
