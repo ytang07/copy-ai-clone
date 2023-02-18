@@ -15,22 +15,23 @@ class PromptPackage(PackageService):
   # generate
   @post("generate")
   def generate(self, title: str, tone:str, tags: str) -> str:
+    """Generates an article using title, tone, and a comma 
+    separated list of tags input as a string"""
     # initialize
-    gen_ai = PromptPackage(self.client)
     tags = [tag.strip() for tag in tags.split(",")]
 
-    headers = gen_ai.generate_outline(title, tags, tone)
+    headers = self.generate_outline(title, tags, tone)
     headers_list = response_to_list(headers.strip())
 
     # create a map of headers to paragraphs
     # turn each header into a section via talking points
     header_talking_points_map = {}
     for header in headers_list:
-      talking_points = gen_ai.generate_talking_points(header, tone)
+      talking_points = self.generate_talking_points(header, tone)
       header_talking_points_map[header] = response_to_list(talking_points)
 
     # generate and save article
-    article = gen_ai.generate_article(title, header_talking_points_map, tone)
+    article = self.generate_article(title, header_talking_points_map, tone)
     return article
 
   # generate section headers 
